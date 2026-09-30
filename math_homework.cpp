@@ -101,7 +101,10 @@ bool gauss(const vector<vector<double>>& m, vector<vector<double>>& result) {
 
 void print_matrix(const vector<vector<double>>& m) {
     for (const auto& row : m) {
-        for (double v : row) cout << v << " ";
+        for (double v : row) {
+            if (fabs(v) < 1e-9) v = 0;
+            cout << v << " ";
+        }
         cout << endl;
     }
 }
